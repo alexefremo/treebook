@@ -13,4 +13,9 @@ class CustomRoutesTest < ActionDispatch::IntegrationTest
         assert_redirected_to '/'
     end
     
+    test "that the user page works" do
+        get '/alexefremo'
+        assert_response :success
+    end   
+    
 end
