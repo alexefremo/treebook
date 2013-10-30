@@ -16,6 +16,7 @@
   <tbody>
     <% @statuses.each do |status| %>
       <tr>
+        <td><%= image_tag status.user.gravatar_url %></td>
         <td><%= status.user.full_name %></td>
         <td><%= status.content %></td>
         <td><%= link_to 'Show', status %></td>
