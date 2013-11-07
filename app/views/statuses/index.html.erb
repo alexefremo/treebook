@@ -1,0 +1,28 @@
+<h1>Listing statuses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+<%= link_to "Post a new status", new_status_path, class: "btn btn-primary" %>
+    
+  <tbody>
+    <% @statuses.each do |status| %>
+      <tr>
+        <td><%= image_tag status.user.gravatar_url %></td>
+        <td><%= status.user.full_name %></td>
+        <td><%= status.content %></td>
+        <td><%= link_to 'Show', status %></td>
+        <td><%= link_to 'Edit', edit_status_path(status) %></td>
+        <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
